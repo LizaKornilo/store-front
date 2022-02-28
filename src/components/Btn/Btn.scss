@@ -1,0 +1,24 @@
+@import "./../../config.scss";
+
+.myButton {
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  padding: 0 30px;
+  border-radius: 5px;
+  font-size: $text-primary-size;
+  font-weight: bold;
+  cursor: pointer;
+
+  &.light {
+    background-color: $btns-light-color;
+    border: solid $btns-light-border-color;
+    color: $btns-light-text-color;
+  }
+
+  &.dark {
+    background-color: $btns-dark-color;
+    border: solid $btns-dark-border-color;
+    color: $btns-dark-text-color;
+  }
+}

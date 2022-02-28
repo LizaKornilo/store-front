@@ -1,0 +1,61 @@
+@import "./../../config.scss";
+$color: white;
+
+.navbar {
+  background-color: $primary-color;
+  color: $color;
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+  }
+}
+
+.logo {
+  font-size: $title-size;
+  cursor: pointer;
+}
+
+.controlPanel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controlPanelItem {
+  margin-left: 15px;
+}
+
+.adminIcon,
+.basket {
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+}
+
+.adminIcon {
+  fill: $color;
+}
+
+.basket {
+  stroke: $color;
+  position: relative;
+  margin-right: 15px;
+}
+
+.basketCount {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-top: -15px;
+  margin-right: -15px;
+  background-color: $color;
+  color: $primary-color;
+  text-align: center;
+  line-height: 30px;
+  font-size: $text-primary-size;
+}

@@ -1,0 +1,52 @@
+@import "./../../config.scss";
+
+.basket-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  user-select: none;
+  .basket__product-image {
+    width: 100px;
+    height: 100px;
+    background: #c4c4c4;
+  }
+  .basket__product-name {
+    margin-left: -10px;
+    font-size: $text-primary-size;
+    font-weight: bold;
+    min-width: 180px;
+  }
+  .basket__product-count {
+    display: flex;
+    align-items: center;
+    .basket__count {
+      margin-left: 16px;
+      margin-right: 16px;
+      font-size: $text-primary-size;
+    }
+    .basket__minus-btn,
+    .basket__plus-btn {
+      height: 24px;
+      width: 24px;
+      color: black;
+      cursor: pointer;
+    }
+    .svg-btn-desable {
+      color: $text-light-color;
+      cursor: auto;
+    }
+  }
+  .basket__full-price {
+    font-size: $text-primary-size;
+    font-weight: bold;
+  }
+  .basket__delete-item {
+    .basket__delete-btn {
+      height: 32px;
+      width: 32px;
+      color: black;
+      cursor: pointer;
+    }
+  }
+}

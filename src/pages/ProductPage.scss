@@ -1,0 +1,43 @@
+@import "./../config.scss";
+
+.productPage__wrapper {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  .productImage {
+    min-height: 560px;
+    min-width: 560px;
+    background-color: #c4c4c4;
+  }
+  .product-page__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 40px;
+    .productInfo {
+      .productName {
+        font-size: 24px;
+      }
+      .productPrice {
+        font-size: $text-medium-size;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      .productDescription {
+        font-size: $text-primary-size;
+        margin-top: 20px;
+        line-height: 22px;
+      }
+    }
+    .product-page__admin-tools {
+      text-align: end;
+      .admin-edit-pr-btn,
+      .admin-delete-pr-btn {
+        color: $primary-color;
+        height: 68px;
+        margin-left: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+}

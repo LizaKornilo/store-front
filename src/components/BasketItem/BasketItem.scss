@@ -35,6 +35,7 @@
     .svg-btn-desable {
       color: $text-light-color;
       cursor: auto;
+      pointer-events: none;
     }
   }
   .basket__full-price {

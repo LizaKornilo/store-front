@@ -12,20 +12,17 @@ function BasketItem({ basketItem, fullPrice }: { basketItem: BasketItemDto, full
   useEffect(() => {
     if (basketItem.count <= 1) {
       setMinusBtnIsActive(false);
+    } else {
+      setMinusBtnIsActive(true);
     }
   }, [fullPrice]);
 
   const decreaseBasketItem = () => {
-    if (basketItem.count > 1) {
-      dispatch({ type: 'DECREASE_PRODUCT_IN_BASKET', payload: basketItem.product.id });
-    }
+    dispatch({ type: 'DECREASE_PRODUCT_IN_BASKET', payload: basketItem.product.id });
   };
 
   const increaseBasketItem = () => {
     dispatch({ type: 'INCREASE_PRODUCT_IN_BASKET', payload: basketItem.product.id });
-    if (basketItem.count >= 1) {
-      setMinusBtnIsActive(true);
-    }
   };
 
   const removeBasketItem = () => {

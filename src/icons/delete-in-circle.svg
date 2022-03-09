@@ -1,0 +1,14 @@
+<svg
+  data-name="Layer 1"
+  id="Layer_1"
+  viewBox="0 0 48 48"
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  stroke="currentColor"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+>
+  <circle cx="24" cy="24" r="23" />
+  <path d="m12 12 24 24M12 36l24-24" />
+</svg>

@@ -4,24 +4,24 @@ import Basket from './pages/Basket';
 import ProductPage from './pages/ProductPage';
 import Store from './pages/Store';
 import {
-  ADMIN_ROUTE, BASKET_ROUTE, LOGIN_ROUTE, PRODUCT_ROUTE, REGISTRATION_ROUTE, STORE_ROUTE,
+  Routes,
 } from './utils/consts';
 
 export const guestRoutes = [
   {
-    path: STORE_ROUTE,
+    path: Routes.STORE,
     Component: Store,
   },
   {
-    path: `${PRODUCT_ROUTE}/:id`,
+    path: `${Routes.PRODUCT}/:id`,
     Component: ProductPage,
   },
   {
-    path: LOGIN_ROUTE,
+    path: Routes.LOGIN,
     Component: Auth,
   },
   {
-    path: REGISTRATION_ROUTE,
+    path: Routes.REGISTRATION,
     Component: Auth,
   },
 ];
@@ -29,7 +29,7 @@ export const guestRoutes = [
 export const userRoutes = [
   ...guestRoutes,
   {
-    path: BASKET_ROUTE,
+    path: Routes.BASKET,
     Component: Basket,
   },
 ];
@@ -37,7 +37,7 @@ export const userRoutes = [
 export const adminRoutes = [
   ...userRoutes,
   {
-    path: ADMIN_ROUTE,
+    path: Routes.ADMIN,
     Component: AdminPanel,
   },
 ];

@@ -2,11 +2,11 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {
-  ADMIN, ADMIN_ROUTE, BASKET_ROUTE, GUEST, LOGIN_ROUTE, STORE_ROUTE, USER,
+  Routes, Roles,
 } from '../../utils/consts';
 import Btn from '../Btn/Btn';
+import SvgSelector from '../SvgSelector';
 import './NavBar.scss';
-import NavBarSvgSelector from './NavBarSvgSelector';
 
 function NavBar() {
   const userRole = useSelector((state: any) => state.user.role);
@@ -16,15 +16,15 @@ function NavBar() {
   const location = useLocation();
 
   const goToStorePage = () => {
-    history(STORE_ROUTE);
+    history(Routes.STORE);
   };
 
   const goToLoginPage = () => {
-    history(LOGIN_ROUTE);
+    history(Routes.LOGIN);
   };
 
   const goToBasketPage = () => {
-    history(BASKET_ROUTE);
+    history(Routes.BASKET);
   };
 
   const logOut = () => {
@@ -33,7 +33,7 @@ function NavBar() {
   };
 
   const goToAdminPanel = () => {
-    history(ADMIN_ROUTE);
+    history(Routes.ADMIN);
   };
 
   return (
@@ -51,56 +51,32 @@ function NavBar() {
           </div>
           <div className="controlPanel">
             {
-              userRole === ADMIN
+              userRole === Roles.ADMIN
               && (
-                <div
-                  className="adminIcon controlPanelItem"
-                  role="button"
-                  tabIndex={0}
-                  onClick={() => goToAdminPanel()}
-                  onKeyDown={() => goToAdminPanel()}
-                >
-                  <NavBarSvgSelector id="admin-icon" />
+                <div className="adminIcon controlPanelItem">
+                  <SvgSelector id="admin-icon" onClick={() => goToAdminPanel()} />
                 </div>)
             }
             {
-              (userRole === USER || userRole === ADMIN)
+              (userRole === Roles.USER || userRole === Roles.ADMIN)
               && (
                 <>
-                  <div
-                    className="basket controlPanelItem"
-                    role="button"
-                    tabIndex={0}
-                    onClick={() => goToBasketPage()}
-                    onKeyDown={() => goToBasketPage()}
-                  >
-                    <NavBarSvgSelector id="basket" />
+                  <div className="basket controlPanelItem">
+                    <SvgSelector id="basket" onClick={() => goToBasketPage()} />
                     <div className="basketCount">4</div>
                   </div>
-                  <div
-                    className="controlPanelItem"
-                    role="button"
-                    tabIndex={0}
-                    onClick={() => logOut()}
-                    onKeyDown={() => logOut()}
-                  >
-                    <Btn text="Выйти" type="light" />
+                  <div className="controlPanelItem">
+                    <Btn text="Выйти" type="light" onClick={() => logOut()} />
                   </div>
                 </>
               )
             }
 
             {
-              userRole === GUEST && location.pathname !== LOGIN_ROUTE
+              userRole === Roles.GUEST && location.pathname !== Routes.LOGIN
                 ? (
-                  <div
-                    className="controlPanelItem"
-                    role="button"
-                    tabIndex={0}
-                    onClick={() => goToLoginPage()}
-                    onKeyDown={() => goToLoginPage()}
-                  >
-                    <Btn text="Войти" type="light" />
+                  <div className="controlPanelItem">
+                    <Btn text="Войти" type="light" onClick={() => goToLoginPage()} />
                   </div>
                 )
                 : null

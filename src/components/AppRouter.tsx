@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 import Store from '../pages/Store';
 import { adminRoutes, userRoutes, guestRoutes } from '../routes';
-import { ADMIN, GUEST, USER } from '../utils/consts';
+import { Roles } from '../utils/consts';
 
 function AppRouter() {
   const userRole = useSelector((state: any) => state.user.role);
@@ -11,15 +11,15 @@ function AppRouter() {
   return (
     <Routes>
       {
-        userRole === GUEST
+        userRole === Roles.GUEST
         && guestRoutes.map(({ path, Component }) => <Route key={path} path={path} element={<Component />} />)
       }
       {
-        userRole === USER
+        userRole === Roles.USER
         && userRoutes.map(({ path, Component }) => <Route key={path} path={path} element={<Component />} />)
       }
       {
-        userRole === ADMIN
+        userRole === Roles.ADMIN
         && adminRoutes.map(({ path, Component }) => <Route key={path} path={path} element={<Component />} />)
       }
 

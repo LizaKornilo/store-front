@@ -1,10 +1,14 @@
-export const ADMIN_ROUTE = '/admin-panel';
-export const LOGIN_ROUTE = '/login';
-export const REGISTRATION_ROUTE = '/registration';
-export const STORE_ROUTE = '/';
-export const BASKET_ROUTE = '/basket';
-export const PRODUCT_ROUTE = '/product';
+export enum Routes {
+  ADMIN = '/admin-panel',
+  LOGIN = '/login',
+  REGISTRATION = '/registration',
+  STORE = '/',
+  BASKET = '/basket',
+  PRODUCT = '/product',
+}
 
-export const GUEST = 'guest';
-export const USER = 'user';
-export const ADMIN = 'admin';
+export enum Roles {
+  GUEST = 'guest',
+  USER = 'user',
+  ADMIN = 'admin',
+}

@@ -9,3 +9,22 @@
   margin: 0 auto;
   padding: 0 15px;
 }
+
+.bigTitle {
+  font-size: $title-size;
+  color: $primary-color;
+  text-align: center;
+  margin: 60px 0 20px 0;
+}
+
+.subTitle {
+  font-size: $text-medium-size;
+  text-align: center;
+  margin: 20px 0 40px 0;
+}
+
+.emptyMessage{
+  text-align: center;
+  font-size: $text-medium-size;
+  color: $text-light-color;
+}

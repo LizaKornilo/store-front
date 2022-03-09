@@ -1,0 +1,13 @@
+@import "./../config.scss";
+
+.storeAddBtn {
+  margin: 0 auto;
+  margin-bottom: 70px;
+  margin-top: 80px;
+  height: 80px;
+  width: 80px;
+  cursor: pointer;
+  svg {
+    stroke: $primary-color;
+  }
+}

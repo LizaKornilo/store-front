@@ -42,11 +42,19 @@
         ],
         "default-param-last": "off",
         "react/jsx-wrap-multilines": "off",
-        "max-len": ["error", { "code": 120 }]
+        "max-len": [
+            "error",
+            {
+                "code": 120
+            }
+        ]
     },
     "settings": {
         "import/resolver": {
             "typescript": {}
         }
+    },
+    "globals": {
+        "JSX": true
     }
 }

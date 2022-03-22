@@ -48,10 +48,29 @@ PageMaker including versions of Lorem Ipsum.`,
   ],
 };
 
+const generateNextId = (prevId: number) => prevId + 1;
+
 function productReducer(state = defaultState, action: any): ReducerState {
   switch (action.type) {
-    // case 'SET_PRODUCT_BY_ID':
-    //   return { role: GUEST };
+    case 'DELETE_PRODUCT_BY_ID':
+      return { products: state.products.filter((product) => product.id !== action.payload) };
+    case 'UPDATE_PRODUCT': {
+      const newProducts = state.products.map((product) => {
+        if (product.id === action.payload.id) {
+          return action.payload;
+        }
+        return product;
+      });
+      return { products: newProducts };
+    }
+    case 'ADD_PRODUCT': {
+      const newProduct: Product = {
+        ...action.payload,
+        id: generateNextId(state.products[state.products.length - 1].id), // заглушка
+      };
+      state.products.push(newProduct);
+      return state;
+    }
     default:
       return state;
   }

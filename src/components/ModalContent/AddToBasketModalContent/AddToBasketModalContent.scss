@@ -1,0 +1,9 @@
+@import "./../../../config.scss";
+
+.add-to-basket-modal {
+  text-align: center;
+  .add-to-basket__message {
+    font-size: $text-medium-size;
+    margin: 50px 0 70px 0;
+  }
+}

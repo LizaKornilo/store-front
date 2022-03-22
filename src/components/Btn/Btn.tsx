@@ -6,16 +6,18 @@ interface Props {
   type: string,
   isSubmitType?: boolean;
   onClick?: () => void,
+  disabled?: boolean,
 }
 
 function Btn({
-  text, type, isSubmitType, onClick,
+  text, type, isSubmitType, onClick, disabled,
 }: Props) {
   if (isSubmitType === true) {
     return (
       <button
         type="submit"
-        className={`myButton ${type}`}
+        className={`my-button ${type}`}
+        disabled={disabled}
       >
         {text}
       </button>
@@ -24,8 +26,9 @@ function Btn({
   return (
     <button
       type="button"
-      className={`myButton ${type}`}
+      className={`my-button ${type}`}
       onClick={onClick}
+      disabled={disabled}
     >
       {text}
     </button>
@@ -34,6 +37,7 @@ function Btn({
 
 Btn.defaultProps = {
   isSubmitType: false,
+  disabled: false,
   onClick: () => null,
 };
 

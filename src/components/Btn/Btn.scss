@@ -1,6 +1,6 @@
 @import "./../../config.scss";
 
-.myButton {
+.my-button {
   height: 45px;
   text-align: center;
   line-height: 45px;
@@ -21,4 +21,12 @@
     border: solid $btns-dark-border-color;
     color: $btns-dark-text-color;
   }
+}
+
+.my-button:disabled,
+.my-button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: wait;
 }

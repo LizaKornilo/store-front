@@ -1,0 +1,53 @@
+@import "./../../../config.scss";
+
+.modal-label {
+  display: block;
+  margin-left: 10px;
+  margin-bottom: 8px;
+  font-size: $text-primary-size;
+  margin-top: 20px;
+}
+
+.modal-input {
+  display: block;
+  height: 45px;
+  width: 620px;
+  font-size: $text-primary-size;
+  color: $text-primary-color;
+  padding: 0 15px;
+  border-color: $text-light-color;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  &::placeholder {
+    color: $text-light-color;
+  }
+}
+
+.modal-textarea-input {
+  display: block;
+  width: 620px;
+  padding: 8px 15px;
+  font-size: $text-primary-size;
+  color: $text-primary-color;
+  border-color: $text-light-color;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  line-height: 32px;
+  resize: none;
+  height: 160px;
+}
+
+.modal-textarea-input::-webkit-scrollbar {
+  width: 0px;
+}
+
+.modal__err-mess {
+  margin-top: 8px;
+  color: $text-light-color;
+}
+
+.modal-right-btn {
+  display: flex;
+  justify-content: end;
+  margin-top: 30px;
+}

@@ -17,24 +17,24 @@ $color: white;
   cursor: pointer;
 }
 
-.controlPanel {
+.control-panel {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.controlPanelItem {
+.control-panel-item {
   margin-left: 15px;
 }
 
-.adminIcon,
+.admin-icon,
 .basket {
   height: 45px;
   width: 45px;
   cursor: pointer;
 }
 
-.adminIcon {
+.admin-icon {
   fill: $color;
 }
 
@@ -44,7 +44,7 @@ $color: white;
   margin-right: 15px;
 }
 
-.basketCount {
+.basket-count {
   position: absolute;
   top: 0;
   right: 0;

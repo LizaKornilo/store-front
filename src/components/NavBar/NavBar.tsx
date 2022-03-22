@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { BasketItemDto } from '../../common/models/basketItem.dto';
 import {
   Routes, Roles,
 } from '../../utils/consts';
@@ -8,8 +9,13 @@ import Btn from '../Btn/Btn';
 import SvgSelector from '../SvgSelector';
 import './NavBar.scss';
 
+function getBasketItemsCount(basketItems: BasketItemDto[]) {
+  return basketItems.reduce((basketItemsCount, item) => basketItemsCount + item.count, 0);
+}
+
 function NavBar() {
   const userRole = useSelector((state: any) => state.user.role);
+  const basketItemsCount = getBasketItemsCount(useSelector((state: any) => state.user.basket));
   const dispatch = useDispatch();
 
   const history = useNavigate();
@@ -49,11 +55,11 @@ function NavBar() {
           >
             2TalkGirls
           </div>
-          <div className="controlPanel">
+          <div className="control-panel">
             {
               userRole === Roles.ADMIN
               && (
-                <div className="adminIcon controlPanelItem">
+                <div className="admin-icon control-panel-item">
                   <SvgSelector id="admin-icon" onClick={() => goToAdminPanel()} />
                 </div>)
             }
@@ -61,11 +67,11 @@ function NavBar() {
               (userRole === Roles.USER || userRole === Roles.ADMIN)
               && (
                 <>
-                  <div className="basket controlPanelItem">
+                  <div className="basket control-panel-item">
                     <SvgSelector id="basket" onClick={() => goToBasketPage()} />
-                    <div className="basketCount">4</div>
+                    <div className="basket-count">{basketItemsCount}</div>
                   </div>
-                  <div className="controlPanelItem">
+                  <div className="control-panel-item">
                     <Btn text="Выйти" type="light" onClick={() => logOut()} />
                   </div>
                 </>
@@ -75,7 +81,7 @@ function NavBar() {
             {
               userRole === Roles.GUEST && location.pathname !== Routes.LOGIN
                 ? (
-                  <div className="controlPanelItem">
+                  <div className="control-panel-item">
                     <Btn text="Войти" type="light" onClick={() => goToLoginPage()} />
                   </div>
                 )

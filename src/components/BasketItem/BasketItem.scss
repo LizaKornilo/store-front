@@ -21,9 +21,11 @@
     display: flex;
     align-items: center;
     .basket__count {
-      margin-left: 16px;
-      margin-right: 16px;
+      margin-left: 8px;
+      margin-right: 8px;
       font-size: $text-primary-size;
+      min-width: 40px;
+      text-align: center;
     }
     .basket__minus-btn,
     .basket__plus-btn {
@@ -41,6 +43,8 @@
   .basket__full-price {
     font-size: $text-primary-size;
     font-weight: bold;
+    min-width: 60px;
+    text-align: center;
   }
   .basket__delete-item {
     .basket__delete-btn {

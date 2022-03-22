@@ -1,5 +1,11 @@
 @import "./config.scss";
 
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
 * {
   font-family: $font-family;
 }
@@ -10,20 +16,20 @@
   padding: 0 15px;
 }
 
-.bigTitle {
+.big-title {
   font-size: $title-size;
   color: $primary-color;
   text-align: center;
   margin: 60px 0 20px 0;
 }
 
-.subTitle {
+.sub-title {
   font-size: $text-medium-size;
   text-align: center;
   margin: 20px 0 40px 0;
 }
 
-.emptyMessage{
+.empty-message{
   text-align: center;
   font-size: $text-medium-size;
   color: $text-light-color;

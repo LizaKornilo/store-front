@@ -31,7 +31,7 @@ function BasketItem({ basketItem, fullPrice }: { basketItem: BasketItemDto, full
 
   return (
     <div className="basket-item">
-      <div className="basket__product-image">{basketItem.product.image}</div>
+      <img className="basket__product-image" src={basketItem.product.image} alt={`product ${basketItem.product.id}`} />
       <div className="basket__product-name">{basketItem.product.name}</div>
       <div className="basket__product-count">
         <SvgSelector

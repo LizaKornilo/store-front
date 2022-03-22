@@ -1,28 +1,28 @@
 @import "./../../config.scss";
 
-.productItem {
+.product-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
 
-  .productImage {
+  .product-image {
     height: 360px;
     width: 360px;
     background-color: #c4c4c4;
   }
 
-  .productName {
+  .product-name {
     margin-top: 40px;
     font-size: $text-medium-size;
   }
 
-  .productShortDescription {
+  .product-short-description {
     margin-top: 8px;
     font-size: $text-primary-size;
   }
 
-  .productPrice {
+  .product-price {
     margin-top: 12px;
     font-size: 18px;
   }

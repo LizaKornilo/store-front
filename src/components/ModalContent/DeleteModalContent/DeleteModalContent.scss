@@ -1,0 +1,9 @@
+@import "./../../../config.scss";
+
+.delete-modal {
+  text-align: center;
+  .delete-from-basket__message {
+    font-size: $text-medium-size;
+    margin: 50px 0 70px 0;
+  }
+}
